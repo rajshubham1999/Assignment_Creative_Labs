@@ -1,0 +1,164 @@
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.banner-container::after {
+    content: '\2605'; 
+    font-size: 40px; 
+    color: darkgreen; 
+    position: absolute; 
+    top: 20px; 
+    left: 45%; 
+    animation: blink 1s infinite; 
+    z-index: 10; 
+}
+
+
+.banner-container {
+    position: relative; 
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.frame-first {
+    height: 500px;
+    width: 550px;
+    margin-right: 20px;
+}
+
+.frame-second {
+    height: 500px;
+    width: 650px;
+    margin-left: 20px;
+}
+
+.heading-text {
+    margin: 2px 4px 2px 4px;
+    width: 500px;
+    height: 150px;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    opacity: 0; 
+    animation: fadeIn 1.5s ease-in forwards;
+    animation-delay: 2s; 
+}
+
+.simple-text {
+    width: 450px;
+    height: 70px;
+    margin: 10px 4px; 
+    color: gray;
+    opacity: 0; 
+    animation: fadeIn 1.5s ease-in forwards; 
+    animation-delay: 0.5s; 
+}
+
+.get-start {
+    width: 220px;
+    height: 50px;
+    margin: 25px 4px 2px 20px;
+    border-radius: 20px;
+    opacity: 0; 
+    animation: slideInFromLeft 1s ease-out forwards; 
+    animation-delay: 3s; 
+}
+
+.get-start > button {
+    width: 220px;
+    height: 50px;
+    background-color: transparent;
+    font-size: 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.someimage {
+    width: 400px;
+    height: 60px;
+    margin-top: 20px;
+    background-color: black;
+}
+
+.frame-second > img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .frame-first {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .frame-second {
+        display: none; 
+    }
+
+    .banner-container {
+        height: auto; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .heading-text {
+        width: 90%; 
+        font-size: 30px; 
+        text-align: center;
+        margin: 10px 0; 
+    }
+
+    .simple-text {
+        width: 90%; 
+        height: auto; 
+        font-size: 14px; 
+        text-align: center; 
+        margin: 10px 0; 
+    }
+
+    .get-start {
+        width: 90%; 
+        margin: 20px 0;
+        text-align: center; 
+    }
+
+    .someimage {
+        width: 90%;
+        height: auto;
+    }
+}
